@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package E4a;
-
+import E5.Traductor1;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -13,43 +13,49 @@ import java.awt.event.KeyEvent;
  * @author administrador1
  */
 public class TraductorGrafico1 extends javax.swing.JFrame {
-
+    Traductor1 traductor;
     /**
      * Creates new form TraductorGrafico1
      */
     public TraductorGrafico1() {
         initComponents();
+        
+         traductor = new Traductor1();
+         traductor.agregar("hola", "hello");
+         traductor.agregar("cómo", "how");
+         traductor.agregar("estas?", "are you?");
+         traductor.agregar("amigo", "homie");
+         traductor.agregar("bien", "good");
+         traductor.agregar("joder", "fuck");
+         traductor.agregar("tu", "you");
+         traductor.agregar("mal", "bad");
+         traductor.agregar("papa", "potatoe");
+         traductor.agregar("fail", "potato");
+        
         ta1.addKeyListener(new KeyAdapter(){
 
             String palabra = "";
-            @Override
+            String traduccion = "";
             public void keyTyped(KeyEvent e) {
-                if(e.getKeyChar()!= ' ' && e.getKeyChar() != 10){
-                palabra = palabra + e.getKeyChar();
-                }
-                else{
+                char key = e.getKeyChar();
+                if(key != ' ' && key != 10 && key != 8){
                     
-                    
-                   if(e.getKeyChar()!= 10){
+                palabra = palabra + key;
+                } 
+                if(key == 8){
                 palabra = palabra.substring(0, palabra.length()-1);
                 }
-                else{
+                
+                if(key == 10 || key == ' '  ){  
                     
-                    ta2.setText(palabra);
+                    traduccion = traduccion + " " + traductor.traducir(palabra);
                     palabra = "";
-                }
+                    
+                
                }
+                ta2.setText(traduccion);
             }
-            public void keyTyped1(KeyEvent e) {
-                if(e.getKeyChar()!= 10){
-                palabra = palabra.substring(0, palabra.length()-1);
-                }
-                else{
-                    
-                    ta2.setText(palabra);
-                    palabra = "";
-                }
-            }
+            
         });
     }
 
@@ -71,6 +77,7 @@ public class TraductorGrafico1 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(java.awt.SystemColor.activeCaption);
 
         ta2.setColumns(20);
         ta2.setFont(new java.awt.Font("Arial", 2, 18)); // NOI18N
@@ -83,15 +90,16 @@ public class TraductorGrafico1 extends javax.swing.JFrame {
         jScrollPane2.setViewportView(ta1);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Traducción");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel2.setForeground(new java.awt.Color(0, 51, 51));
         jLabel2.setText("Texto a traducir");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel3.setText("Cifrado Cesar");
+        jLabel3.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel3.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
+        jLabel3.setText("Traductor");
         jLabel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -103,33 +111,33 @@ public class TraductorGrafico1 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(74, 74, 74))
             .addGroup(layout.createSequentialGroup()
-                .addGap(268, 268, 268)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(314, 314, 314)
+                .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51))))
+                        .addGap(63, 63, 63))))
         );
 
         pack();

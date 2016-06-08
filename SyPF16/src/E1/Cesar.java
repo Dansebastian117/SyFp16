@@ -13,8 +13,12 @@ public class Cesar {
     public String cifrar (String mensaje, int constante){
         String resultado= "";
         for (int i = 0; i<mensaje.length(); i++){
-
-            resultado = resultado+(char)(mensaje.charAt(i)+ constante);
+            if((int)mensaje.charAt(i)== 10){
+                resultado= resultado + mensaje.charAt(i);
+            }
+            else{
+                resultado = resultado + (char)(mensaje.charAt(i) + constante);
+            }
         }
         return resultado;
         
