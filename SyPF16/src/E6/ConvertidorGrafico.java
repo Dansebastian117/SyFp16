@@ -24,24 +24,42 @@ public class ConvertidorGrafico extends javax.swing.JFrame {
        
        
         
-                cb1.addActionListener(new ActionListener() {
+                convert.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                Double d = new Double(ta1.getText());  
+                
+               
+                Double d = new Double(ta1.getText());
+                
+                 
+                
                 String s = (String) cb1.getSelectedItem();
                 String s1 = (String) cb2.getSelectedItem();
+                Convertidor conv = new Convertidor();
+                Double resultado = conv.convertir(s, d, s1);
+                
+                ta2.setText(resultado.toString());
+                
+                
+                
+                
             }
         });
-        
+                
+                
+        cb1.removeAllItems();
         cb1.addItem("Centimetros");
+        cb1.addItem("Metros");
         cb1.addItem("Kilometros");
         cb1.addItem("Pulgadas");
         cb1.addItem("Pies");
         cb1.addItem("Yardas");
         cb1.addItem("Millas");
         
+        cb2.removeAllItems();
         cb2.addItem("Centimetros");
+        cb2.addItem("Metros");
         cb2.addItem("Kilometros");
         cb2.addItem("Pulgadas");
         cb2.addItem("Pies");
