@@ -10,5 +10,5 @@ package ER1;
  * @author administrador1
  */
 public class Aclase {
-    protected String descripcion;
+    protected  String descripcion;
 }
