@@ -41,7 +41,7 @@ public class NoCircula implements Interface{
         if(digitos == "9" || digitos == "0"){
             return dia = "Viernes";
         }else
-            return dia = "Escribe tus dígitos";
+            return dia = "Selecciona tus dígitos";
     }
     
 
@@ -61,8 +61,10 @@ public class NoCircula implements Interface{
         }
         if (dia == "Viernes"){
             return digitos = "9 y 0";
+        }else{
+            return digitos = "Selecciona tu día";
         }
-        return digitos;
+        
     }
 
     public String getColor(String color) {
@@ -80,8 +82,10 @@ public class NoCircula implements Interface{
         }
         if(color == "Azul"){
             return dia = "Viernes";
+        }else{
+            return dia = "Selecciona tu color";
         }
-    return dia;
+    
     }
     
     
