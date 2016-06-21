@@ -16,8 +16,8 @@ public class C1  extends Aclase implements iCLSE {
         System.out.print(descripcion);
     }
 
-    public C1(String s) {
-        s = super.descripcion;
+    public C1(String descripcion) {
+         super(descripcion);
     }
     
 }

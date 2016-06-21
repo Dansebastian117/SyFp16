@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ER1;
+package E8;
 
 /**
  *
  * @author administrador1
  */
-// abstract implements iclase
-public abstract class Aclase implements iCLSE {
-    protected  String descripcion;
-
-    public Aclase(String descripcion) {
-        this.descripcion = descripcion;
-    }
+public class Escribir {
     
 }

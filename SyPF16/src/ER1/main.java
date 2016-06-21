@@ -11,16 +11,11 @@ package ER1;
  */
 public class main {
     public static void main(String[]args){
-        iCLSE i = new iCLSE() {
-
-            @Override
-            public void print() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        };
-        Aclase a = new Aclase();
+        iCLSE i = new C1("COOL"); 
+        
+        Aclase a = new C2();
         Aclase cdos = new C2();
         i.print();
         
-    }
+    }  
 }

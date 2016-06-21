@@ -11,17 +11,21 @@ package ER1;
  */
 public class C2  extends Aclase implements iCLSE {
 
+    public C2(String descripcion) {
+        super(descripcion);
+    }
+
     C2() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void print() {
-      System.out.print(descripcion);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public C2(String s) {
-        s = super.descripcion;
-    }
+    
+
+    
     
 }

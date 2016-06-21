@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ER1;
+package E7;
+
+import java.util.List;
 
 /**
  *
  * @author administrador1
  */
-// abstract implements iclase
-public abstract class Aclase implements iCLSE {
-    protected  String descripcion;
-
-    public Aclase(String descripcion) {
-        this.descripcion = descripcion;
-    }
-    
+public interface ISort {
+    public int [] ordenar(int array[]);
+    public List<Integer> ordenar(List<Integer> array);
 }
+
+
