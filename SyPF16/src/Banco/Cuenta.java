@@ -12,9 +12,37 @@ import java.util.logging.Logger;
  *
  * @author administrador1
  */
-public class Cuenta {
-    double saldo = 100.00;
     
+
+public class Cuenta {
+    double saldo ;
+    int cuenta;
+    int cliente;
+
+    private Cuenta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public int getCuenta() {
+        return cuenta;
+    }
+
+    public int getCliente() {
+        return cliente;
+    }
+
+    public Cuenta(double saldo, int cuenta, int cliente) {
+        this.saldo = saldo;
+        this.cuenta = cuenta;
+        this.cliente = cliente;
+    }
+
+    
+     
     public double checkSaldo(){
         return saldo;
         

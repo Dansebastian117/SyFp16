@@ -12,6 +12,33 @@ package Banco;
 public class Cliente {
     String nombre;
     String edad;
+    int ID;
+    int numCuenta;
+
+    public Cliente(String nombre, String edad, int ID, int numCuenta) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.ID = ID;
+        this.numCuenta = numCuenta;
+    }
+
+    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEdad() {
+        return edad;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public int getNumCuenta() {
+        return numCuenta;
+    }
     
     
     
